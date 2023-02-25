@@ -1,0 +1,62 @@
+Problem solving with arrays I
+/
+Problems
+/
+Reverse the Array
+An array/list Arr of size n is given to you. Your job is to reverse the given array/list with out using any extra space means space complexity remains O(1).
+
+O(1) space complexity means you have to reverse the original array/list entered without using any extra buffer array.
+
+Reverse means : if original array is [11,12,15] so after reverse logic array will became [15,12,11].
+Hint: 2 pointer approach.
+
+Note: Coders must strictly follow the function rules given below, So that you will be well aware of the parameters passed to the function and also how to return results from the required function.
+
+Input layout:
+First line of input is N i.e. size of the array.
+Second line of input is the elements in the array.
+
+Output layout:
+Array reversed and printed.
+
+Constraints to be followed:
+1 <= N <= 100
+1 <= Arr[i] <= 105
+
+Sample test case is:
+Input:
+5
+3 2 3 3 5
+Output:
+5 3 3 2 3
+
+Important Instruction : Sample test case is for explanatory purpose but to run your custom test case on the terminal follow the input layout as mentioned in the command line arguments.
+Sample Test Cases
+Test Case 1:
+Expected Output:
+5
+3 2 3 3 5
+5·3·3·2·3·
+
+Test Case 2:
+Expected Output:
+4
+1 2 3 4
+4·3·2·1·
+
+PYTHON SOLUTION:-
+def reverseArray(arr, n):
+    # Reverse the array using the 2-pointer approach
+    start = 0
+    end = n - 1
+    while start < end:
+        arr[start], arr[end] = arr[end], arr[start]
+        start += 1
+        end -= 1
+    return arr
+
+# Driver code to take input and call the reverseArray function
+n = int(input())
+arr = list(map(int, input().split()))
+result = reverseArray(arr, n)
+print(*result)
