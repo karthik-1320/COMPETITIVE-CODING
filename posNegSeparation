@@ -1,0 +1,39 @@
+Problem Statement:
+An array Arr of size N is given to you, Array consists of +ve and -ve elements those are randomly distributed in the array.
+Your job is to arrange all -ve elements in the first section of the array and +ve elements in the second section of the array.
+Brief: if original array is [20, -11, 30, -45, 50] so after arranging +ve and -ve elements resultant array will be [-11, -45, 20, 30, 50].
+Note: The sequence of +ve and -ve elements will remains same as appearing in the original array.
+To solve this problem complete function posNegSeparation with following parameters:
+integer Arr[N] : Array Arr of size N
+Function returns:
+integer [] : The return array will store the result as required.
+Note: Coders must strictly follow the function rules given below, So that you will be well aware of the parameters passed to the function and also how to return results from the required function.
+
+Constraints to be followed:
+1 <= N <= 100
+-105 <= Arr[i] <= 105
+
+Sample test case 1:
+Input:
+20 -11 30 -45 50
+Output:
+-11 -45 20 30 50
+
+Sample test case 2:
+Input:
+-20 -11 -30 -45 -50
+Output:
+-20 -11 -30 -45 -50
+Python Solution:-
+Arr=list(map(int,input().split()))
+def posNegSeparation(Arr):
+  a=[]
+  b=[]
+  for i in Arr:
+    if i>=0:
+      a.append(i)
+    else :
+      b.append(i)
+  return b+a
+print(",".join(map(str,posNegSeparation(Arr))))
+    
