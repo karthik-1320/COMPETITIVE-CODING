@@ -1,0 +1,39 @@
+Problem Statement:
+An array Arr of size N is given to you. Your job is to find the kth max-min pair from the given array.
+kth max-min par means : if original array is [11,12,11,500,450] and the value of k = 2, then 2nd max-min pair in the given array is (450,12) where 1st max is 500 then 2nd max is 450 and similarly 11 is the 1st minimum element and 12 is the 2nd minimum in the given array.
+
+To solve this problem complete function kMaxMin with following parameters:
+integer Arr[N] : Array Arr of size N
+integer k: Value for finding kth max-min pair.
+
+Function returns:
+integer [] : The return array will store the kth maximum followed by kth minimum element in the array Arr[].
+Note: Coders must strictly follow the function rules given below, So that you will be well aware of the parameters passed to the function and also how to return results from the required function.
+
+Constraints to be followed:
+1 <= N <= 100
+1 <= Arr[i] <= 105
+1 <= k< Arr.length()
+
+Sample test case 1:
+Input:
+11 12 11 500 450
+2
+Output:
+450 12
+Sample test case 2:
+Input:
+11 11 11 11 11
+2
+Output:
+11 11
+
+Python Solution:-
+Arr=list(map(int,input().split()))
+def kMaxMin(Arr, k):
+a=set(Arr)
+Arr=list(a)
+Arr. sort()
+n=len(Arr)
+return (Arr[n-k], Arr[k-1])
+print(.join(map(str, kMaxMin(Arr, k))))
